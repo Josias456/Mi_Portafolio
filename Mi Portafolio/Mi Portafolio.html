@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #portfolio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .profile-box {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        #profile-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        #profile-name {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .action-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .action-button:hover {
+            background-color: #0056b3;
+        }
+
+        #modal {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 400px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #close-modal {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="portfolio-container">
+    <div class="profile-box">
+        <img id="profile-image" src="img/foto2.jpg" alt="Perfil">
+        <div id="profile-name">Josias Murillo Tangara</div>
+        <button id="about-me-button" class="action-button" onclick="openModal('Estudiante de sistemas informáticos apasionado por la tecnología y el desarrollo de software y aspiraciones en el campo de la tecnología.')">Acerca de mí</button>
+        <div class="action-buttons">
+            <button class="action-button" onclick="openModal('Diseñar e Implementar un Sistema de gestion de Inventario para un Restaurante')">Mis proyectos</button>
+            <button class="action-button" onclick="openModal('Creador y Editor de videos Profesionales')">Mis Habilidades</button>
+            <button class="action-button" onclick="openModal('Entrenar, Jugar Boleyboll, Cantar, Bailar')">Mis Hobbies</button>
+            <button class="action-button" onclick="openModal('Numero de Referencia: +591 77212877')">Contáctame</button>
+        </div>
+
+        <div style="margin-top: 20px;"></div>
+        <div id="modal" onclick="closeModal()">
+            <span id="close-modal" onclick="closeModal()">X</span>
+            <p id="modal-text">Texto del modal</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal(text) {
+        document.getElementById("modal").style.display = "block";
+        document.getElementById("modal-text").innerText = text;
+    }
+
+    function closeModal() {
+        document.getElementById("modal").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
